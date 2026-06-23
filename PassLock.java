@@ -34,6 +34,7 @@ public class PassLock extends BankAccount {
                 block = true;
                 System.out.println("Withdraw money : "+amount+" Bath\n"+
                              "Remaining balance : "+balance+" Bath");
+                addTransection("withraw",amount);
                 System.out.println("-----------------------------------------------------");
             }
         }

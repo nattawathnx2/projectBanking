@@ -14,6 +14,7 @@ public class FeeAccount extends BankAccount {
             balance -= totalAmount;
             System.out.println("Withdraw money : "+amount+" Bath\n"+
                              "Remaining balance : "+balance+" Bath");
+            addTransection("withraw",amount);
             System.out.println("-----------------------------------------------------");
         }
     }
