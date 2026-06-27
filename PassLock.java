@@ -1,6 +1,7 @@
 package projectBanking;
 public class PassLock extends BankAccount {
     private String pass;
+    private int logicAttempts = 0;
     private boolean block;
     public PassLock(String InputNumber,String InputPass){
         super(InputNumber);
@@ -41,11 +42,18 @@ public class PassLock extends BankAccount {
     }
     
     public void unlockAccount(String inputPass){
+        if(logicAttempts >= 3){
+            System.out.println("!--- Your Account on Block ---!");
+            return;
+        }
         if(inputPass.equals(pass)){
             block = false;
+            logicAttempts = 0;
             System.out.println("Your identity has been verified.");
         }else{
+            logicAttempts++;
             System.out.println("Error: Incorrect Password!");
+            System.out.println("Enter the wrong password : "+logicAttempts+" /3");
         }
     }
 }
