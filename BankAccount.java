@@ -35,5 +35,17 @@ public abstract class BankAccount {
         System.out.println("-----------------------------------------");
     }
     
+    public void transfer(BankAccount targetAccount, double amount){
+        System.out.println("--- Start Withraw ---");
+        double balanceBeforeWithraw = this.balance;
+        this.withraw(amount);
+        if(this.balance < balanceBeforeWithraw){
+            targetAccount.deposit(amount);
+            System.out.println("<--- Transfer Success! --->");
+        }else{
+            System.out.println("!--- Money transfer failed ---!");
+        }
+    }
+    
     public abstract void withraw(double amount);
 }   
