@@ -12,9 +12,9 @@ public class FeeAccount extends BankAccount {
             System.out.println("\nError! There are insufficient funds in the account to withdraw.");
         }else{
             balance -= totalAmount;
-            System.out.println("Withdraw money : "+amount+" Bath\n"+
+            System.out.println("Withdraw money : "+amount+" Bath (Fee: "+fee+" Bath)\n"+
                              "Remaining balance : "+balance+" Bath");
-            addTransection("withraw",amount);
+            addTransection("withraw (Ine.Fee)",totalAmount);
             System.out.println("-----------------------------------------------------");
         }
     }
